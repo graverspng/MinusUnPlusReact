@@ -3,12 +3,17 @@ import { useState } from "react";
 function App() {
 
   const [result, setResult] = useState(0);
+  const [change, setChange] = useState(0);
+
   
   function ClickButton() {
-    setResult(result + 1);
+    setResult(result + parseInt(change));
   }
   function unclickButton() {
-    setResult(result - 1);
+    setResult(result - change);
+  }
+  function handleChange(event) {
+    setChange(event.target.value);
   }
   
 
@@ -17,10 +22,10 @@ function App() {
   return (
     <div className="App">
       <h1>{result}</h1>
-      <button onClick ={ClickButton}>+1</button>
-      <button onClick ={unclickButton}>-1</button>
+      <button onClick ={ClickButton}>+{change}</button>
+      <button onClick ={unclickButton}>-{change}</button>
       <label>
-        <input type="search"></input>
+        <input value={change} type="number" onChange={handleChange}></input>
       </label>
       <script>
       </script>
