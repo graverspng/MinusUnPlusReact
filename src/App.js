@@ -1,37 +1,25 @@
 import { useState } from "react";
+import Counter from './Counter.js'
+import Hello from './Hello.js'
 
-function App() {
+function App() {  
 
-  const [result, setResult] = useState(0);
-  const [change, setChange] = useState(0);
+  const allNames = [
+    "Jekabs",
+    "Railijs",
+    "Marsels",
+  ]
 
-  
-  function ClickButton() {
-    setResult(result + parseInt(change));
-  }
-  function unclickButton() {
-    setResult(result - change);
-  }
-  function handleChange(event) {
-    setChange(event.target.value);
-  }
-  
-
-
+  const allNamers = allNames.map(name, index);
 
   return (
-    <div className="App">
-      <h1>{result}</h1>
-      <button onClick ={ClickButton}>+{change}</button>
-      <button onClick ={unclickButton}>-{change}</button>
-      <label>
-        <input value={change} type="number" onChange={handleChange}></input>
-      </label>
-      <script>
-      </script>
-    </div>
-    
-    
+
+  <div>
+    <Counter />
+    <Hello />
+    <Hello />
+  </div>
+
   );
 }
 
