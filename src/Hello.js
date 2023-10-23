@@ -1,28 +1,16 @@
 import { useState } from "react";
 
-function Hello() {
+function Hello(props) {
 
-    const [result, setResult] = useState(0);
-    const [change, setChange] = useState(0);
-    
-    
-    function ClickButton() {
-        setResult(result + parseInt(change));
-      }
-    
-    function handleChange(event) {
-        setChange(event.target.value);
-      }
+    const [name, setName] = useState(props.name)
 
-      function myFunction(event) {
-        setChange(event.target.value);
+      function changeName(event) {
+        setName(event.target.value);
       }
     return (
-
-        
         <>
-        <input value={change} type="search" onChange={handleChange}></input>
-        <p>Hello, {change}</p>
+        <input value={name} type="search" onChange={changeName}></input>
+        <p>Hello, {name}</p>
         </>
     );
 }

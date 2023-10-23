@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function Counter() {
+function Counter(props) {
 
-  const [result, setResult] = useState(0);
-  const [change, setChange] = useState(0);
+  const [result, setResult] = useState(props.result);
+  const [change, setChange] = useState(props.result);
 
   
   function ClickButton() {
@@ -15,10 +15,7 @@ function Counter() {
   function handleChange(event) {
     setChange(event.target.value);
   }
-  
-
-
-
+ 
   return (
     <div className="App">
       <h1>{result}</h1>
