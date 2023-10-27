@@ -5,7 +5,7 @@ function Check(props) {
     const [checkbox, setcheckbox] = useState(props.checked)
 
     function handleChange(event) {
-        setcheckbox(event.target.value);
+        setcheckbox(event.target.checked);
       }
 
     return (
